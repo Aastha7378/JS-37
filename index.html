@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filter Method</title>
+    <style>
+        .student-card{
+            
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0,1);
+            border: 1px solid black;
+        }
+
+        .inputbox{
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            border: 1px solid black;
+        }
+
+        
+    </style>
 </head>
 <body>
     <h1>Students</h1>
-    <input type="text" id="search" placeholder="Search" onkeyup="loadSearchResult()"/>
+    <input class="inputbox" type="text" id="search" placeholder="Search" onkeyup="loadSearchResult()"/>
     
     <div id="students-container">
 
