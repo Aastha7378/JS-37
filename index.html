@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Method</title>
+</head>
+<body>
+    <h1>Students</h1>
+    <input type="text" id="search" placeholder="Search" onkeyup="loadSearchResult()"/>
+    
+    <div id="students-container">
+
+    </div>
+
+
+   <script>
+    const students = [
+        "Prerna",
+        "Aastha",
+        "Khushi",
+        "Namrata",
+        "Sandhya",
+        "Sakshi",
+        "Shrushti",
+        "Janvi",
+        "Dipali",
+        "Ashay",
+        "Rohit",
+        "Mahesh",
+        "Nayan",
+        "Bhushan"
+    ]
+
+    const studentsContainer = document.getElementById('students-container');
+    students.forEach((stud)=>{
+        studentsContainer.innerHTML += `<div class='student-card'>${stud}</div>`
+    })
+
+    function loadSearchResult(){
+        const inputElement = document.getElementById('search');
+        const searchText = inputElement.value.toLowerCase();
+        studentsContainer.innerHTML = '';
+
+        const filteredStudents = students.filter((stud)=>{
+            if(stud.toLowerCase().includes(searchText)){
+                return true;
+            }
+        })
+
+        filteredStudents.forEach((stud)=>{
+            studentsContainer.innerHTML += `<div class='student-card'>${stud}</div>`
+        })
+        
+    }
+
+   </script> 
+
+    
+</body>
+</html>
